@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct DashboardView: View {
+    
+    @State var data: [String] = ["Task1", "Task2", "Task3", "Task4"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                List(data, id: \.self) { item in
+                    Text(item)
+                }
+            }
+            .navigationTitle("Dashboard")
+            .toolbar(content: {
+                Button(action: {
+                    // Your action here
+                }) {
+                    Image(systemName: "plus")
+                }
+            })
+        }.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
 
-#Preview {
-    DashboardView()
+struct DashboardView_Previews: PreviewProvider {
+    static var previews: some View {
+        DashboardView()
+    }
 }
