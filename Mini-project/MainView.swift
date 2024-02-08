@@ -8,22 +8,26 @@
 import SwiftUI
 
 struct MainView: View {
+    
     var body: some View {
-        VStack {
-         
-            TabView{
-                DashboardView()
-                    .tabItem { VStack {
-                        Image(systemName: "house").font(.largeTitle)
-                        Text("Home").font(.headline)
-                    } }
-                
-                ProfileView()
-                    .tabItem { VStack {
-                        Image(systemName: "person").font(.largeTitle)
-                        Text("Profile").font(.headline)
-                    } }
-            }
+       
+            
+            VStack {
+             
+                TabView{
+                    TodoListView()
+                        .tabItem { VStack {
+                            Image(systemName: "house").font(.largeTitle)
+                            Text("Home").font(.headline)
+                        } }
+                    
+                    ProfileView()
+                        .tabItem { VStack {
+                            Image(systemName: "person").font(.largeTitle)
+                            Text("Profile").font(.headline)
+                        } }
+                }
+            
         }
           
     }

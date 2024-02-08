@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CBA8E412B73539B006F749D /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E402B73539B006F749D /* DashboardView.swift */; };
+		2CBA8E412B73539B006F749D /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E402B73539B006F749D /* TodoListView.swift */; };
 		2CBA8E432B7355FB006F749D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E422B7355FB006F749D /* AddView.swift */; };
 		2CBA8E452B7358C9006F749D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E442B7358C9006F749D /* ProfileView.swift */; };
 		2CBA8E492B735BFE006F749D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E482B735BFE006F749D /* UserModel.swift */; };
-		2CBA8E4B2B735C10006F749D /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E4A2B735C10006F749D /* DataModel.swift */; };
+		2CBA8E4B2B735C10006F749D /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E4A2B735C10006F749D /* TaskModel.swift */; };
+		2CBB397D2B74C3A8001F31DF /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBB397C2B74C3A8001F31DF /* ToDoViewModel.swift */; };
+		2CCAC7C62B74DCBC0077DDC7 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAC7C52B74DCBC0077DDC7 /* AddTaskView.swift */; };
+		2CCAC7C82B74DD600077DDC7 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCAC7C72B74DD600077DDC7 /* TaskDetailView.swift */; };
 		2CFF6EE32B70C752005F7360 /* Mini_projectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF6EE22B70C752005F7360 /* Mini_projectApp.swift */; };
 		2CFF6EE52B70C752005F7360 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF6EE42B70C752005F7360 /* MainView.swift */; };
 		2CFF6EE72B70C755005F7360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFF6EE62B70C755005F7360 /* Assets.xcassets */; };
@@ -39,11 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2CBA8E402B73539B006F749D /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		2CBA8E402B73539B006F749D /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		2CBA8E422B7355FB006F749D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		2CBA8E442B7358C9006F749D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2CBA8E482B735BFE006F749D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		2CBA8E4A2B735C10006F749D /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		2CBA8E4A2B735C10006F749D /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		2CBB397C2B74C3A8001F31DF /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
+		2CCAC7C52B74DCBC0077DDC7 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		2CCAC7C72B74DD600077DDC7 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		2CFF6EDF2B70C752005F7360 /* Mini-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CFF6EE22B70C752005F7360 /* Mini_projectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini_projectApp.swift; sourceTree = "<group>"; };
 		2CFF6EE42B70C752005F7360 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -85,9 +91,11 @@
 		2CBA8E3F2B73537B006F749D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2CBA8E402B73539B006F749D /* DashboardView.swift */,
+				2CBA8E402B73539B006F749D /* TodoListView.swift */,
 				2CBA8E442B7358C9006F749D /* ProfileView.swift */,
 				2CBA8E422B7355FB006F749D /* AddView.swift */,
+				2CCAC7C52B74DCBC0077DDC7 /* AddTaskView.swift */,
+				2CCAC7C72B74DD600077DDC7 /* TaskDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,9 +104,17 @@
 			isa = PBXGroup;
 			children = (
 				2CBA8E482B735BFE006F749D /* UserModel.swift */,
-				2CBA8E4A2B735C10006F749D /* DataModel.swift */,
+				2CBA8E4A2B735C10006F749D /* TaskModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2CBB397B2B74C344001F31DF /* Viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				2CBB397C2B74C3A8001F31DF /* ToDoViewModel.swift */,
+			);
+			path = Viewmodels;
 			sourceTree = "<group>";
 		};
 		2CFF6ED62B70C752005F7360 = {
@@ -126,6 +142,7 @@
 			children = (
 				2CFF6EE22B70C752005F7360 /* Mini_projectApp.swift */,
 				2CFF6EE42B70C752005F7360 /* MainView.swift */,
+				2CBB397B2B74C344001F31DF /* Viewmodels */,
 				2CBA8E472B735BE9006F749D /* Model */,
 				2CBA8E3F2B73537B006F749D /* Views */,
 				2CFF6EE62B70C755005F7360 /* Assets.xcassets */,
@@ -290,11 +307,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CBA8E4B2B735C10006F749D /* DataModel.swift in Sources */,
+				2CBA8E4B2B735C10006F749D /* TaskModel.swift in Sources */,
 				2CBA8E432B7355FB006F749D /* AddView.swift in Sources */,
 				2CFF6EE52B70C752005F7360 /* MainView.swift in Sources */,
+				2CCAC7C62B74DCBC0077DDC7 /* AddTaskView.swift in Sources */,
+				2CCAC7C82B74DD600077DDC7 /* TaskDetailView.swift in Sources */,
 				2CBA8E452B7358C9006F749D /* ProfileView.swift in Sources */,
-				2CBA8E412B73539B006F749D /* DashboardView.swift in Sources */,
+				2CBB397D2B74C3A8001F31DF /* ToDoViewModel.swift in Sources */,
+				2CBA8E412B73539B006F749D /* TodoListView.swift in Sources */,
 				2CBA8E492B735BFE006F749D /* UserModel.swift in Sources */,
 				2CFF6EE32B70C752005F7360 /* Mini_projectApp.swift in Sources */,
 			);
