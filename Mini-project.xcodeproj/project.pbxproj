@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C9D00012B74E1520092DC0F /* GetContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D00002B74E1520092DC0F /* GetContacts.swift */; };
+		2C9D00042B74E2540092DC0F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D00032B74E2540092DC0F /* ContactView.swift */; };
 		2CBA8E412B73539B006F749D /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E402B73539B006F749D /* TodoListView.swift */; };
 		2CBA8E432B7355FB006F749D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E422B7355FB006F749D /* AddView.swift */; };
 		2CBA8E452B7358C9006F749D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBA8E442B7358C9006F749D /* ProfileView.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C9D00002B74E1520092DC0F /* GetContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContacts.swift; sourceTree = "<group>"; };
+		2C9D00032B74E2540092DC0F /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		2CBA8E402B73539B006F749D /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		2CBA8E422B7355FB006F749D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		2CBA8E442B7358C9006F749D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -88,9 +92,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C9D00022B74E2400092DC0F /* contact */ = {
+			isa = PBXGroup;
+			children = (
+				2C9D00032B74E2540092DC0F /* ContactView.swift */,
+			);
+			path = contact;
+			sourceTree = "<group>";
+		};
 		2CBA8E3F2B73537B006F749D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2C9D00022B74E2400092DC0F /* contact */,
 				2CBA8E402B73539B006F749D /* TodoListView.swift */,
 				2CBA8E442B7358C9006F749D /* ProfileView.swift */,
 				2CBA8E422B7355FB006F749D /* AddView.swift */,
@@ -105,6 +118,7 @@
 			children = (
 				2CBA8E482B735BFE006F749D /* UserModel.swift */,
 				2CBA8E4A2B735C10006F749D /* TaskModel.swift */,
+				2C9D00002B74E1520092DC0F /* GetContacts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,7 +255,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					2CFF6EDE2B70C752005F7360 = {
 						CreatedOnToolsVersion = 14.2;
@@ -314,6 +328,8 @@
 				2CCAC7C82B74DD600077DDC7 /* TaskDetailView.swift in Sources */,
 				2CBA8E452B7358C9006F749D /* ProfileView.swift in Sources */,
 				2CBB397D2B74C3A8001F31DF /* ToDoViewModel.swift in Sources */,
+				2C9D00042B74E2540092DC0F /* ContactView.swift in Sources */,
+				2C9D00012B74E1520092DC0F /* GetContacts.swift in Sources */,
 				2CBA8E412B73539B006F749D /* TodoListView.swift in Sources */,
 				2CBA8E492B735BFE006F749D /* UserModel.swift in Sources */,
 				2CFF6EE32B70C752005F7360 /* Mini_projectApp.swift in Sources */,
@@ -386,9 +402,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -444,9 +462,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -470,9 +490,11 @@
 				CODE_SIGN_ENTITLEMENTS = "Mini-project/Mini_project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini-project/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = Reason;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -506,9 +528,11 @@
 				CODE_SIGN_ENTITLEMENTS = "Mini-project/Mini_project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini-project/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSContactsUsageDescription = Reason;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -541,6 +565,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -563,6 +588,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -584,6 +610,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -605,6 +632,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;

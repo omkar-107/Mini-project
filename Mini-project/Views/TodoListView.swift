@@ -22,7 +22,7 @@ struct TodoListView: View {
             }
             .navigationTitle("Dashboard 📋")
             .navigationBarItems(trailing:
-                                    NavigationLink(destination: AddTaskView()) {
+                                    NavigationLink(destination:  AddView( todo: Task(contact: ContactInfo(firstName: "name", lastName: "name")))) {
                     Image(systemName: "plus")
                 }
             )

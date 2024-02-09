@@ -27,8 +27,11 @@ struct MainView: View {
                             Text("Profile").font(.headline)
                         } }
                 }
+        
+     
             
         }
+      
           
     }
 }
