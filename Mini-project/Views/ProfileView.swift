@@ -1,11 +1,5 @@
-//
-//  ProfileView.swift
-//  Mini-project
-//
-//  Created by mini project on 07/02/24.
-//
-
 import SwiftUI
+import FirebaseAuth
 
 struct ProfileView: View {
     @State var name = "Saurabh Rajopadhye"
@@ -14,33 +8,27 @@ struct ProfileView: View {
     @State private var hovering = false
     
     var body: some View {
-        VStack(spacing: 30.0){
-            HStack{
-                
-                
+        VStack(spacing: 30.0) {
+            HStack {
                 Button(action: {
-                    
+                    // No action specified
                 }) {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.black)
                         .padding()
                         .font(.title)
-                    
                 }
-                
-                
                 Spacer()
             }
             
-            VStack(spacing: 90.0){
-                
+            VStack(spacing: 90.0) {
                 Text("Profile")
                     .fontWeight(.bold)
                     .font(.largeTitle)
                     .foregroundColor(.blue)
                     .shadow(radius: 10)
                 
-                VStack{
+                VStack {
                     Text("Hello,")
                         .font(.title)
                         .bold()
@@ -49,66 +37,67 @@ struct ProfileView: View {
                         .bold()
                 }
                 
-                
-                
-                VStack(spacing: 20.0){
-                    
-                    HStack{
+                VStack(spacing: 20.0) {
+                    HStack {
                         Spacer()
                         Image(systemName: "person.crop.circle.fill").font(.largeTitle).foregroundColor(.black)
                         Text("Contact: " + "+91-" + String(contact))
                             .font(.title2)
-                        
                         Spacer()
-                        
                     }
                     
-                    
-                    HStack{
+                    HStack {
                         Spacer()
                         Image(systemName: "envelope")
                             .font(.title)
                         Text("AppleID: " + appleid)
                             .font(.title2)
                         Spacer()
-                        
                     }
                 }
                 
-                
-                
                 Button(action: {
-                    // No action specified
+                    logout()
                 }) {
-                    Text("Edit Profile")
-                        .foregroundColor(.blue)
+                    Text("Logout")
+                        .foregroundColor(.red)
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.blue, lineWidth: 2)
+                                .stroke(Color.red, lineWidth: 2)
                                 .background(
                                     RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(Color.blue.opacity(0.1))
+                                        .foregroundColor(Color.red.opacity(0.1))
                                         .opacity(.init(self.hovering ? 1 : 0))
                                 )
                         )
-                        .shadow(color: Color.blue.opacity(0.5), radius: 5, x: 0, y: 2)
+                        .shadow(color: Color.red.opacity(0.5), radius: 5, x: 0, y: 2)
                 }
                 .onHover { hovering in
                     self.hovering = hovering
                 }
-            }.padding(.all)
-            
+            }
+            .padding(.all)
         }
         .padding()
     }
     
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            // Redirect to LoginSignUpView after logging out
+            // You may need to use a navigation link or presentation mode to navigate to the LoginSignUpView
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+        print("Logged out")
+    }
     
-    
-    
-    
+   
 }
 
-#Preview {
-    ProfileView()
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfileView()
+    }
 }

@@ -6,12 +6,47 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseAuth
+import GoogleSignIn
 
 @main
 struct Mini_projectApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
-        WindowGroup {
-            MainView()
+       
+        WindowGroup{
+            if Auth.auth().currentUser != nil {
+                            // User is already logged in, show MainView directly
+                            MainView()
+                        } else {
+                            // User is not logged in, show LoginSignUpView
+                            LoginSignUpView()
+                        }
         }
+           
+        
     }
 }
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+
+        return true
+    }
+
+    private func application(_ application: UIApplication,
+                     open url: URL,
+                     sourceApplication: String?,
+                     annotation: [String : Any]) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
+    }
+    
+}
+
+
+
+
