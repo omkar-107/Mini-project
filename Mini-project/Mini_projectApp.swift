@@ -17,13 +17,7 @@ struct Mini_projectApp: App {
     var body: some Scene {
        
         WindowGroup{
-            if Auth.auth().currentUser != nil {
-                            // User is already logged in, show MainView directly
-                            MainView()
-                        } else {
-                            // User is not logged in, show LoginSignUpView
-                            LoginSignUpView()
-                        }
+            LoginSignUpView()
         }
            
         

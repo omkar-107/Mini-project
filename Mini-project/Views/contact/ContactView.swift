@@ -12,6 +12,8 @@ struct ContactView: View {
     @State private var contacts = [ContactInfo.init(firstName: "", lastName: "", phoneNumber: nil)]
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
+    @Binding var contactObj : ContactInfo
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack{
             HStack {
@@ -56,7 +58,14 @@ struct ContactView: View {
                                "\(cont)".lowercased().contains(self.searchText.lowercased())
                        })) { contact in
                            ContactRow(contact: contact)
-                               .onTapGesture(perform: { print(contact)})
+                               .onTapGesture(perform: { print(contact)
+                                   contactObj.firstName = contact.firstName
+                                   contactObj.lastName  = contact.lastName
+                                   contactObj.phoneNumber = contact.phoneNumber
+                                   print("Contact Obj" , contactObj)
+                                   presentationMode.wrappedValue.dismiss()
+                                    
+                               })
                        }
                    }.onAppear() {
                        self.requestAccess()
@@ -120,6 +129,7 @@ extension UIApplication {
 
 
 
-#Preview {
-    ContactView()
-}
+//#Preview {
+//    @State var contact = ContactInfo(firstName: "Hello", lastName: "World")
+//    ContactView(contactObj:$ contact)
+//}

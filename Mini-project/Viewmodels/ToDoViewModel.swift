@@ -8,7 +8,7 @@
 import Foundation
 
 class TodoListViewModel: ObservableObject {
-    @Published var tasks:[Task] 
+    @Published var tasks:[Task]
 //    = [
 //        Task(title: "Complete SwiftUI Tutorial", description: "Finish the SwiftUI tutorial on Apple's website.", dueDate: Date(), contact: ""),
 //        Task(title: "Read a Book", description: "Read a new book to expand knowledge.", dueDate: Date().addingTimeInterval(86400), contact: ""),

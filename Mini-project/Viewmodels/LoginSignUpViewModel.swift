@@ -7,15 +7,14 @@ import GoogleSignIn
 class LoginSignUpViewModel: ObservableObject {
     @Published var phoneNumber = ""
     @Published var selectedCountryCode = "+91"
-    @Published var isLoggedIn = false
-    @Published var isRedirecting = false
-    @Published var redirectToMainView = false
+    @Published var path = NavigationPath()
+
 
     let countryCodes = ["+1", "+44", "+91", "+81"]
 
     func signIn() {
         print("phone number \(selectedCountryCode + phoneNumber)")
-        redirectToMainView = true
+        
     }
 
     func signInWithApple() {
@@ -38,17 +37,17 @@ class LoginSignUpViewModel: ObservableObject {
             let accessToken = user.accessToken
             let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
 
-            Auth.auth().signIn(with: credential) { res, error in
+            Auth.auth().signIn(with: credential) { [self] res, error in
                 if let error = error {
                     print(error.localizedDescription)
                     return
                 }
                 guard let user = res?.user else { return }
                 print(user.email as Any)
+                
+                path.append("MainView")
 
-                self.isLoggedIn = true
-                self.isRedirecting = true
-                self.redirectToMainView = true
+
             }
         }
 
@@ -56,8 +55,6 @@ class LoginSignUpViewModel: ObservableObject {
     }
 
     func logout() {
-        isLoggedIn = false
-        isRedirecting = false
-        redirectToMainView = false
+
     }
 }

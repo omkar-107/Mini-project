@@ -11,6 +11,7 @@
 		2C79072F2B775DB8005B4C0B /* LoginSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79072E2B775DB8005B4C0B /* LoginSignUpViewModel.swift */; };
 		2C7907322B775DEF005B4C0B /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7907312B775DEF005B4C0B /* AppButton.swift */; };
 		2C7907342B776446005B4C0B /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7907332B776446005B4C0B /* Application.swift */; };
+		2C842B4C2B7BB267006A4F1F /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 2C842B4B2B7BB267006A4F1F /* SQLite */; };
 		2C9D00012B74E1520092DC0F /* GetContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D00002B74E1520092DC0F /* GetContacts.swift */; };
 		2C9D00042B74E2540092DC0F /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9D00032B74E2540092DC0F /* ContactView.swift */; };
 		2CAD7A5D2B77502200B40FFE /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 2CAD7A5C2B77502200B40FFE /* GoogleSignIn */; };
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C842B4C2B7BB267006A4F1F /* SQLite in Frameworks */,
 				2CAD7A5D2B77502200B40FFE /* GoogleSignIn in Frameworks */,
 				2CAD7A622B7750AA00B40FFE /* FirebaseAuth in Frameworks */,
 				2CAD7A5F2B77502200B40FFE /* GoogleSignInSwift in Frameworks */,
@@ -252,6 +254,7 @@
 				2CAD7A5C2B77502200B40FFE /* GoogleSignIn */,
 				2CAD7A5E2B77502200B40FFE /* GoogleSignInSwift */,
 				2CAD7A612B7750AA00B40FFE /* FirebaseAuth */,
+				2C842B4B2B7BB267006A4F1F /* SQLite */,
 			);
 			productName = "Mini-project";
 			productReference = 2CFF6EDF2B70C752005F7360 /* Mini-project.app */;
@@ -328,6 +331,7 @@
 			packageReferences = (
 				2CAD7A5B2B77502200B40FFE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				2CAD7A602B7750AA00B40FFE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2C842B4A2B7BB267006A4F1F /* XCRemoteSwiftPackageReference "SQLite" */,
 			);
 			productRefGroup = 2CFF6EE02B70C752005F7360 /* Products */;
 			projectDirPath = "";
@@ -565,7 +569,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -606,7 +610,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -753,6 +757,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2C842B4A2B7BB267006A4F1F /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
 		2CAD7A5B2B77502200B40FFE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -772,6 +784,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2C842B4B2B7BB267006A4F1F /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C842B4A2B7BB267006A4F1F /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
 		2CAD7A5C2B77502200B40FFE /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2CAD7A5B2B77502200B40FFE /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;

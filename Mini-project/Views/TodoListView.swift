@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+
 struct TodoListView: View {
    
     @ObservedObject var todolistviewmodel = TodoListViewModel()
@@ -22,10 +23,12 @@ struct TodoListView: View {
             }
             .navigationTitle("Dashboard 📋")
             .navigationBarItems(trailing:
-                                    NavigationLink(destination:  AddView( todo: Task(contact: ContactInfo(firstName: "name", lastName: "name")))) {
+                                    NavigationLink(destination:  AddView( todo: Task(contact: ContactInfo(firstName: "name", lastName: "name")), todolistviewmodel: todolistviewmodel)
+                                        ) {
                     Image(systemName: "plus")
                 }
             )
+            
         }.environmentObject(todolistviewmodel)
         
         .edgesIgnoringSafeArea(.all)

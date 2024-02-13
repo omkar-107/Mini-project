@@ -6,20 +6,12 @@ struct ProfileView: View {
     @State var contact = 1234567891
     @State var appleid = "ABCD@123"
     @State private var hovering = false
+    @Environment(\.dismiss) private var dismiss
+
     
     var body: some View {
         VStack(spacing: 30.0) {
-            HStack {
-                Button(action: {
-                    // No action specified
-                }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.black)
-                        .padding()
-                        .font(.title)
-                }
-                Spacer()
-            }
+
             
             VStack(spacing: 90.0) {
                 Text("Profile")
@@ -56,9 +48,13 @@ struct ProfileView: View {
                     }
                 }
                 
+                
                 Button(action: {
+                    
+                    
                     logout()
                 }) {
+                    
                     Text("Logout")
                         .foregroundColor(.red)
                         .padding()
@@ -85,11 +81,15 @@ struct ProfileView: View {
     func logout() {
         do {
             try Auth.auth().signOut()
+            
+            dismiss.self()
             // Redirect to LoginSignUpView after logging out
             // You may need to use a navigation link or presentation mode to navigate to the LoginSignUpView
+            
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }
+        
         print("Logged out")
     }
     
